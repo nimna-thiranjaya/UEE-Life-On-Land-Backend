@@ -1,6 +1,9 @@
-const mongoose = require("mongoose");
+const express = require("express");
+const UserRouter = express.Router();
 
-const userScheama = mongoose.Schema({});
+const { UserRegister } = require("../controllers/user.controller");
+const userAuth = require("../middlewares/user.middleware");
 
-const User = mongoose.model("User", userScheama);
-module.exports = User;
+UserRouter.post("/register", UserRegister);
+
+module.exports = UserRouter;
