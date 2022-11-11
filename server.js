@@ -13,10 +13,12 @@ app.use(cors());
 //@import Routes
 const UserRouter = require("./routes/user.routes");
 const OrganizationRouter = require("./routes/organization.routes");
+const BlogRouter = require("./routes/blog.routes");
 
 //@Use Routes
 app.use("/api/user/", UserRouter);
 app.use("/api/organization/", OrganizationRouter);
+app.use("/api/blog/", BlogRouter);
 
 //Create MongoDB connection and server configuration
 const PORT = process.env.PORT || 5000;

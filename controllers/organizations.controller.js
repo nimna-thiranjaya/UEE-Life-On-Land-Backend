@@ -87,7 +87,6 @@ const GetAllApprovedOrganizations = async (req, res) => {
 const GetOrganizationById = async (req, res) => {
   try {
     const orgId = req.params.orgId;
-    console.log(orgId);
     const organization = await Organization.findById(orgId);
     if (organization) {
       return res.status(200).send({
@@ -110,7 +109,6 @@ const GetOrganizationById = async (req, res) => {
 const UpdateOrganization = async (req, res) => {
   try {
     const orgId = req.params.orgId;
-    console.log(orgId);
     const {
       orgName,
       orgEmail,
