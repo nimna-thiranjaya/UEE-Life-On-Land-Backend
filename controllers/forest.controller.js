@@ -18,7 +18,7 @@ const CreateForest = async (req, res) => {
     if (result) {
       return res
         .status(200)
-        .send({ status: true, message: "Forest Created Successfully", result });
+        .send({ status: true, message: "Forest Created Successfully" });
     } else {
       return res
         .status(400)
@@ -269,7 +269,7 @@ const GetForestByID = async (req, res) => {
     if (result) {
       return res
         .status(200)
-        .send({ status: true, message: "Forest", forest: result });
+        .send({ status: true, message: "Forest Fletch", forest: result });
     } else {
       return res.status(400).send({ status: false, message: "No Forest" });
     }
