@@ -187,7 +187,7 @@ const DeleteOrganization = async (req, res) => {
 //Admin Get All Organizations
 const AdminGetAllOrganizations = async (req, res) => {
   try {
-    const organizations = await Organization.find();
+    const organizations = await Organization.find().sort({ updatedAt: -1 });
     const approvedAndPendingOrganizations = organizations.filter((org) => {
       return org.adminStatus === "Approved" || org.adminStatus === "Pending";
     });

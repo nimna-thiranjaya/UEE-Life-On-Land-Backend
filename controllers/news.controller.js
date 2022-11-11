@@ -11,9 +11,9 @@ const timeDifference = (current, previous) => {
   var elapsed = current - previous;
 
   if (elapsed < msPerMinute) {
-    return Math.round(elapsed / 1000) + " seconds ago";
+    return Math.round(elapsed / 1000) + " sec ago";
   } else if (elapsed < msPerHour) {
-    return Math.round(elapsed / msPerMinute) + " minutes ago";
+    return Math.round(elapsed / msPerMinute) + " min ago";
   } else if (elapsed < msPerDay) {
     return Math.round(elapsed / msPerHour) + " hours ago";
   } else if (elapsed < msPerMonth) {
@@ -177,7 +177,7 @@ const DeleteNews = async (req, res) => {
 //Admin get all news
 const AdminGetAllNews = async (req, res) => {
   try {
-    const news = await News.find();
+    const news = await News.find().sort({ updatedAt: -1 });
     const approvedAndPendingNews = news.filter((news) => {
       return news.adminStatus === "Approved" || news.adminStatus === "Pending";
     });
