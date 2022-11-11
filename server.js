@@ -15,12 +15,14 @@ const UserRouter = require("./routes/user.routes");
 const OrganizationRouter = require("./routes/organization.routes");
 const BlogRouter = require("./routes/blog.routes");
 const NewsRouter = require("./routes/news.routes");
+const PaymentRouter = require("./routes/payment.routes");
 
 //@Use Routes
 app.use("/api/user/", UserRouter);
 app.use("/api/organization/", OrganizationRouter);
 app.use("/api/blog/", BlogRouter);
 app.use("/api/news/", NewsRouter);
+app.use("/api/payment/", PaymentRouter);
 
 //Create MongoDB connection and server configuration
 const PORT = process.env.PORT || 5000;
